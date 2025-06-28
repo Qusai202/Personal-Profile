@@ -24,6 +24,33 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    const langButtons = document.querySelectorAll('.lang-switcher button');
+    const defaultLang = localStorage.getItem('lang') || 'en';
+
+    function setLanguage(lang) {
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+            const key = element.getAttribute('data-i18n');
+            if (translations[lang] && translations[lang][key]) {
+                element.textContent = translations[lang][key];
+            }
+        });
+       
+        langButtons.forEach(btn => btn.classList.remove('active'));
+        document.getElementById(`lang-${lang}`).classList.add('active');
+        localStorage.setItem('lang', lang);
+
+        document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+    }
+
+    langButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            setLanguage(button.dataset.lang);
+        });
+    });
+
+    setLanguage(defaultLang);
+
+
     const themeToggle = document.querySelector('.theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
     const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
@@ -50,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
- 
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
         setTheme(savedTheme);
