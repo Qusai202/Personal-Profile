@@ -4,17 +4,17 @@
   --main-text-color: #e0e0e0;
   --sidebar-text-color: #f0f0f0;
   --sidebar-title-color: #ffffff;
-  --accent-color: #FF4500;
-  --accent-light-color: #ff6347;
+  --accent-color: #007bff; /* أزرق جديد */
+  --accent-light-color: #3399ff; /* أزرق فاتح جديد */
   --card-bg: #383838;
   --card-border: #4a4a4a;
-  --badge-bg: rgba(255, 69, 0, 0.2);
-  --badge-border: rgba(255, 69, 0, 0.5);
-  --section-heading-color: #FF4500;
+  --badge-bg: rgba(0, 123, 255, 0.2); /* أزرق جديد */
+  --badge-border: rgba(0, 123, 255, 0.5); /* أزرق جديد */
+  --section-heading-color: #007bff; /* أزرق جديد */
   --shadow-color-sidebar: rgba(0, 0, 0, 0.3);
   --shadow-color-card: rgba(0, 0, 0, 0.2);
   --shadow-color-card-hover: rgba(0, 0, 0, 0.4);
-  --section-heading-underline: #FF4500;
+  --section-heading-underline: #007bff; /* أزرق جديد */
   --spacing-top-controls: 70px;
 }
 
@@ -25,17 +25,17 @@ body.light-mode {
   --main-text-color: #34495e;
   --sidebar-text-color: #5d6d7e;
   --sidebar-title-color: #2c3e50;
-  --accent-color: #3498db;
-  --accent-light-color: #5dade2;
+  --accent-color: #0056b3; /* أزرق داكن لـ Light Mode */
+  --accent-light-color: #007bff; /* أزرق فاتح لـ Light Mode */
   --card-bg: #ffffff;
   --card-border: #e0e0e0;
-  --badge-bg: rgba(52, 152, 219, 0.2);
-  --badge-border: rgba(52, 152, 219, 0.5);
+  --badge-bg: rgba(0, 86, 179, 0.2); /* أزرق جديد */
+  --badge-border: rgba(0, 86, 179, 0.5); /* أزرق جديد */
   --section-heading-color: #34495e;
   --shadow-color-sidebar: rgba(0, 0, 0, 0.1);
   --shadow-color-card: rgba(0, 0, 0, 0.05);
   --shadow-color-card-hover: rgba(0, 0, 0, 0.1);
-  --section-heading-underline: #3498db;
+  --section-heading-underline: #0056b3; /* أزرق جديد */
   --spacing-top-controls: 70px;
 }
 
@@ -143,9 +143,14 @@ body.light-mode .lang-switcher button.active {
   border-radius: 10px;
   object-fit: cover;
   border: 4px solid var(--accent-color);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem; /* تم تقليل الهامش لتقريب الروابط */
   box-shadow: 0 0 20px var(--accent-color);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* تعديل خاص لروابط التواصل الاجتماعي */
+.social-links {
+  margin-bottom: 1.5rem; /* هامش سفلي لتباعدها عن العنوان H1 */
 }
 
 .sidebar h1 {
