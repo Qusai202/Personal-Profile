@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 element.textContent = translations[lang][key];
             }
         });
-       
+
         langButtons.forEach(btn => btn.classList.remove('active'));
         document.getElementById(`lang-${lang}`).classList.add('active');
         localStorage.setItem('lang', lang);
